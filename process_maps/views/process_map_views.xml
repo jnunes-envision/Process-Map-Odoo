@@ -8,9 +8,9 @@
             <form string="Process Map">
                 <header>
                     <button name="action_publish" string="Publish" type="object" 
-                            class="oe_highlight" attrs="{'invisible': [('state', '=', 'published')]}"/>
+                            class="oe_highlight" invisible="state == 'published'"/>
                     <button name="action_archive" string="Archive" type="object" 
-                            attrs="{'invisible': [('state', '=', 'archived')]}"/>
+                            invisible="state == 'archived'"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,published,archived"/>
                 </header>
                 <sheet>
@@ -38,14 +38,14 @@
                             <group>
                                 <field name="diagram_type"/>
                                 <field name="diagram_data" widget="text" 
-                                       attrs="{'invisible': [('diagram_type', '=', 'image')]}"
+                                       invisible="diagram_type == 'image'"
                                        placeholder="Enter diagram data (BPMN, Mermaid, or Flowchart format)..."/>
                                 <field name="image" widget="image" 
-                                       attrs="{'invisible': [('diagram_type', '!=', 'image')]}"/>
+                                       invisible="diagram_type != 'image'"/>
                                 <field name="image_filename" 
-                                       attrs="{'invisible': [('diagram_type', '!=', 'image')]}"/>
+                                       invisible="diagram_type != 'image'"/>
                             </group>
-                            <div class="alert alert-info" role="alert" attrs="{'invisible': [('diagram_type', '!=', 'mermaid')]}">
+                            <div class="alert alert-info" role="alert" invisible="diagram_type != 'mermaid'">
                                 <strong>Mermaid Syntax:</strong> Use Mermaid syntax for flowcharts, sequence diagrams, etc.
                                 Example: graph TD; A[Start] --> B[Process] --> C[End]
                             </div>
