@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="process_maps.ProcessMapDiagramWidget" owl="1">
+        <div class="process-map-diagram-widget">
+            <div t-ref="diagramContainer" class="diagram-container"></div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_process_map_employee,process.map.employee,model_process_map,base.group_user,1,0,0,0
+access_process_map_manager,process.map.manager,model_process_map,base.group_user_manager,1,1,1,1
+access_process_map_category_employee,process.map.category.employee,model_process_map_category,base.group_user,1,0,0,0
+access_process_map_category_manager,process.map.category.manager,model_process_map_category,base.group_user_manager,1,1,1,1
+access_process_map_tag_employee,process.map.tag.employee,model_process_map_tag,base.group_user,1,0,0,0
+access_process_map_tag_manager,process.map.tag.manager,model_process_map_tag,base.group_user_manager,1,1,1,1
+access_process_map_change_log_employee,process.map.change.log.employee,model_process_map_change_log,base.group_user,1,0,0,0
+access_process_map_change_log_manager,process.map.change.log.manager,model_process_map_change_log,base.group_user_manager,1,1,1,1

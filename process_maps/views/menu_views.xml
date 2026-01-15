@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_process_maps_root"
+              name="Process Maps"
+              sequence="100"/>
+
+    <!-- Process Maps Menu -->
+    <menuitem id="menu_process_maps"
+              name="All Processes"
+              parent="menu_process_maps_root"
+              action="action_process_map"
+              sequence="10"/>
+
+    <!-- Categories Menu -->
+    <menuitem id="menu_process_map_categories"
+              name="Categories"
+              parent="menu_process_maps_root"
+              action="action_process_map_category"
+              sequence="20"/>
+
+    <!-- Quick Access Menu (for employees) -->
+    <menuitem id="menu_process_maps_quick"
+              name="Process Maps"
+              parent="base.menu_administration"
+              action="action_process_map"
+              sequence="100"/>
+</odoo>

@@ -1,0 +1,59 @@
+/* Process Map Module Styles */
+
+.process-map-diagram-widget {
+    width: 100%;
+    min-height: 300px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.diagram-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.diagram-container .mermaid {
+    text-align: center;
+}
+
+.diagram-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Process Map Kanban Cards */
+.o_kanban_view .oe_kanban_card {
+    cursor: pointer;
+}
+
+.o_kanban_view .oe_kanban_card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Process Map List View */
+.o_list_view .o_list_table .o_data_row {
+    cursor: pointer;
+}
+
+/* Status Badges */
+.badge-draft {
+    background-color: #6c757d;
+}
+
+.badge-published {
+    background-color: #28a745;
+}
+
+.badge-archived {
+    background-color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .process-map-diagram-widget {
+        padding: 10px;
+    }
+}
