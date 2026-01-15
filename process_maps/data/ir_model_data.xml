@@ -21,5 +21,12 @@
             <field name="name">process.map.change.log</field>
             <field name="model">process.map.change.log</field>
         </record>
+        
+        <!-- Custom group for Process Map Managers -->
+        <record id="group_process_map_manager" model="res.groups">
+            <field name="name">Process Map Manager</field>
+            <field name="category_id" ref="base.module_category_business"/>
+            <field name="comment">Can create, edit, and delete all process maps</field>
+        </record>
     </data>
 </odoo>
