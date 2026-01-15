@@ -31,7 +31,8 @@ export class ProcessMapDiagramWidget extends Component {
         if (!this.diagramContainer.el) return;
         
         const container = this.diagramContainer.el;
-        const diagramType = this.props.record?.data?.diagram_type || "mermaid";
+        const record = this.props.record;
+        const diagramType = record?.data?.diagram_type?.[0] || record?.data?.diagram_type || "mermaid";
         const diagramData = this.props.value || "";
         
         container.innerHTML = "";
@@ -39,7 +40,7 @@ export class ProcessMapDiagramWidget extends Component {
         if (diagramType === "mermaid" && diagramData) {
             this.loadMermaid(container, diagramData);
         } else if (diagramType === "image") {
-            this.loadImage(container);
+            this.loadImage(container, record);
         } else if (diagramData) {
             const pre = document.createElement("pre");
             pre.className = "bg-light p-3 border rounded";
@@ -51,9 +52,10 @@ export class ProcessMapDiagramWidget extends Component {
         }
     }
 
-    loadImage(container) {
+    loadImage(container, record) {
         const img = document.createElement("img");
-        const imageData = this.props.record?.data?.image;
+        const recordData = record?.data || {};
+        const imageData = recordData.image?.[0] || recordData.image;
         if (imageData) {
             img.src = `data:image/png;base64,${imageData}`;
             img.className = "process-map-image";
