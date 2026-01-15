@@ -234,7 +234,9 @@ class ProcessMapCategory(models.Model):
     
     process_map_count = fields.Integer(
         string='Process Count',
-        compute='_compute_process_map_count'
+        compute='_compute_process_map_count',
+        store=False,
+        readonly=True
     )
     
     @api.depends('process_map_ids')

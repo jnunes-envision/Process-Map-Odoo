@@ -226,7 +226,7 @@
                     </group>
                     <notebook>
                         <page string="Process Maps">
-                            <field name="process_map_ids">
+                            <field name="process_map_ids" readonly="1">
                                 <tree>
                                     <field name="name"/>
                                     <field name="version"/>
