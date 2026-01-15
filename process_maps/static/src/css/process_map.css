@@ -2,26 +2,120 @@
 
 .process-map-diagram-widget {
     width: 100%;
-    min-height: 300px;
+    min-height: 400px;
     border: 1px solid #dee2e6;
-    border-radius: 4px;
-    padding: 15px;
+    border-radius: 8px;
+    padding: 0;
     background-color: #fff;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.diagram-controls {
+    display: flex;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 8px 8px 0 0;
+    flex-wrap: wrap;
+}
+
+.diagram-controls button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.diagram-wrapper {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    cursor: grab;
+    background: linear-gradient(90deg, #f8f9fa 1px, transparent 1px),
+                linear-gradient(#f8f9fa 1px, transparent 1px);
+    background-size: 20px 20px;
+    min-height: 350px;
+}
+
+.diagram-wrapper:active {
+    cursor: grabbing;
 }
 
 .diagram-container {
     width: 100%;
-    overflow-x: auto;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
 }
 
 .diagram-container .mermaid {
     text-align: center;
+    user-select: none;
 }
 
-.diagram-container img {
+.diagram-container .interactive-svg {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.1s ease-out;
+}
+
+.diagram-container .interactive-svg .node,
+.diagram-container .interactive-svg .nodeLabel {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.diagram-container .interactive-svg .node:hover,
+.diagram-container .interactive-svg .nodeLabel:hover {
+    filter: brightness(1.1);
+}
+
+.diagram-container .interactive-svg .edgeLabel {
+    pointer-events: none;
+}
+
+.diagram-container img.process-map-image {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: grab;
+}
+
+.diagram-container img.process-map-image:active {
+    cursor: grabbing;
+}
+
+.diagram-hint {
+    padding: 8px 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    border-radius: 0 0 8px 8px;
+    color: #6c757d;
+    text-align: center;
+}
+
+.diagram-hint i {
+    margin-right: 5px;
+}
+
+/* Fullscreen mode */
+.process-map-diagram-widget:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    padding: 0;
+}
+
+.process-map-diagram-widget:fullscreen .diagram-wrapper {
+    min-height: calc(100vh - 120px);
 }
 
 /* Process Map Kanban Cards */

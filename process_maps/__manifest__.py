@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Process Maps',
-    'version': '17.0.1.0.5',
+    'version': '17.0.1.0.6',
     'category': 'Business',
     'summary': 'Display and manage process maps for employees and managers',
     'description': """

@@ -2,7 +2,26 @@
 <templates xml:space="preserve">
     <t t-name="process_maps.ProcessMapDiagramWidget" owl="1">
         <div class="process-map-diagram-widget">
-            <div t-ref="diagramContainer" class="diagram-container"></div>
+            <div class="diagram-controls">
+                <button class="btn btn-sm btn-secondary" t-on-click="zoomIn" title="Zoom In (Ctrl + Scroll)">
+                    <i class="fa fa-search-plus"/> Zoom In
+                </button>
+                <button class="btn btn-sm btn-secondary" t-on-click="zoomOut" title="Zoom Out (Ctrl + Scroll)">
+                    <i class="fa fa-search-minus"/> Zoom Out
+                </button>
+                <button class="btn btn-sm btn-secondary" t-on-click="resetZoom" title="Reset Zoom">
+                    <i class="fa fa-arrows-alt"/> Reset
+                </button>
+                <button class="btn btn-sm btn-primary" t-on-click="toggleFullscreen" title="Fullscreen (F11)">
+                    <i class="fa fa-expand"/> Fullscreen
+                </button>
+            </div>
+            <div t-ref="wrapper" class="diagram-wrapper">
+                <div t-ref="diagramContainer" class="diagram-container"></div>
+            </div>
+            <div class="diagram-hint">
+                <small><i class="fa fa-info-circle"/> Drag to pan • Ctrl + Scroll to zoom • Click nodes to interact</small>
+            </div>
         </div>
     </t>
 </templates>

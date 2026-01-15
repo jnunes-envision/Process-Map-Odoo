@@ -49,6 +49,11 @@
                                 <strong>Mermaid Syntax:</strong> Use Mermaid syntax for flowcharts, sequence diagrams, etc.
                                 Example: graph TD; A[Start] --> B[Process] --> C[End]
                             </div>
+                            <separator string="Interactive Diagram Preview" invisible="not diagram_data and diagram_type != 'image'"/>
+                            <div invisible="not diagram_data and diagram_type != 'image'" class="mt-3">
+                                <field name="diagram_data" widget="process_map_diagram" readonly="1" 
+                                       options="{'type': diagram_type, 'image': image}"/>
+                            </div>
                         </page>
                         <page string="Description" name="description">
                             <field name="description" placeholder="Enter detailed process description..."/>
