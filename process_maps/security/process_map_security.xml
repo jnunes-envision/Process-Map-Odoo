@@ -4,7 +4,7 @@
         <!-- Employees can only view published and active process maps -->
         <record id="process_map_employee_rule" model="ir.rule">
             <field name="name">Process Map: Employee Access</field>
-            <field name="model_id" ref="base.model_process_map"/>
+            <field name="model_id" search="[('model', '=', 'process.map')]"/>
             <field name="domain_force">['|', ('state', '=', 'published'), ('responsible_user_id', '=', user.id)]</field>
             <field name="groups" eval="[(4, ref('base.group_user'))]"/>
         </record>
@@ -12,7 +12,7 @@
         <!-- Managers can view and edit all process maps -->
         <record id="process_map_manager_rule" model="ir.rule">
             <field name="name">Process Map: Manager Access</field>
-            <field name="model_id" ref="base.model_process_map"/>
+            <field name="model_id" search="[('model', '=', 'process.map')]"/>
             <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('group_process_map_manager'))]"/>
         </record>
