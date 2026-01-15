@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Process Maps',
-    'version': '17.0.1.0.4',
+    'version': '17.0.1.0.5',
     'category': 'Business',
     'summary': 'Display and manage process maps for employees and managers',
     'description': """
@@ -16,7 +16,7 @@ This module allows organizations to:
     """,
     'author': 'Your Company',
     'website': 'https://www.yourcompany.com',
-    'depends': ['base', 'web'],
+    'depends': ['base', 'web', 'mail'],
     'data': [
         'data/ir_model_data.xml',
         'security/ir.model.access.csv',
